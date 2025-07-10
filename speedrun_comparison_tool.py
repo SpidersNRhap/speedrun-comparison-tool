@@ -568,7 +568,7 @@ class SpeedrunComparisonTool:
         self.root = root
         self.root.title("Speedrun Comparison Tool")
         self.root.geometry("1600x1000") 
-        self.root.iconbitmap("./app.ico")
+        self.set_app_icon()
         
         self.videos = {}
         self.video_counter = 0
@@ -615,6 +615,18 @@ class SpeedrunComparisonTool:
         self.add_video()
         self.add_video()
 
+    def set_app_icon(self):
+        try:
+            if os.path.exists("icon.png"):
+                icon = tk.PhotoImage(file="icon.png")
+                self.root.iconphoto(True, icon)
+            elif os.name == 'nt' and os.path.exists("icon.ico"):
+                self.root.iconbitmap("icon.ico")
+            else:
+                pass
+        except Exception as e:
+            print(f"Could not set icon: {e}")
+            
     def load_settings(self):
         try:
             if os.path.exists(self.settings_file):
