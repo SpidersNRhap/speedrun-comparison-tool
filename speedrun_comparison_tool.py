@@ -16,7 +16,7 @@ from functools import partial
 import json
 import math
 
-class FastVideoPlayer:
+class VideoPlayer:
     
     def __init__(self):
         self.video_capture = None
@@ -452,7 +452,7 @@ class FastVideoPlayer:
         self._frame_cache.clear()
 
 
-class OptimizedVideoComparisonApp:
+class SpeedrunComparisonTool:
     def on_seek(self, video_id, val):
         if video_id not in self.videos:
             return
@@ -568,10 +568,11 @@ class OptimizedVideoComparisonApp:
         self.root = root
         self.root.title("Speedrun Comparison Tool")
         self.root.geometry("1600x1000") 
+        self.root.iconbitmap("./app.ico")
         
         self.videos = {}
         self.video_counter = 0
-        self.max_videos = 6
+        self.max_videos = 9
         
         try:
             import ctypes as ct
@@ -1853,7 +1854,7 @@ class OptimizedVideoComparisonApp:
         video_id = self.video_counter
         
         video_data = {
-            'player': FastVideoPlayer(),
+            'player': VideoPlayer(),
             'start_frame': 0,
             'end_frame': 0,
             'current_frame': tk.IntVar(value=0),
@@ -2007,7 +2008,7 @@ class OptimizedVideoComparisonApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = OptimizedVideoComparisonApp(root)
+    app = SpeedrunComparisonTool(root)
     root.mainloop()
 
 
