@@ -31,7 +31,7 @@ A powerful desktop application for comparing speedrun videos side-by-side with p
 ### Generating Comparison Videos
 
 #### Export Settings
-- **Output FPS**: 24, 25, 30, or 60 fps
+- **Output FPS**: 20, 30, or 60 fps
 - **Resolution**: Quarter (0.25x), Half (0.5x), or Full (1.0x)
 - **Codec**: Auto-detect, H.264, MPEG-4, or Xvid
 
@@ -39,8 +39,6 @@ A powerful desktop application for comparing speedrun videos side-by-side with p
 1. Configure your export settings
 2. Click **"Generate Comparison Video"**
 3. Choose output location and filename
-4. Monitor progress in the detailed progress window
-5. View real-time statistics and operation logs
 
 ## 📄 License
 
